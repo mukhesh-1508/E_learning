@@ -17,5 +17,8 @@ public class CourseReview {
     @ManyToOne
     @JoinColumn(name = "courseId")
     private Course course;
+    @ManyToOne
+    @JoinColumn(name = "userId")
+    private UserL user;
     private String content;
 }

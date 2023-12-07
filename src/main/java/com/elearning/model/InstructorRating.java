@@ -9,17 +9,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "InstructorReview")
-public class InstructorReview {
+@Table(name = "InstructorRating")
+public class InstructorRating {
     @Id
-    @GeneratedValue
-    private Long instructorReviewId;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long instructorRatingId;
     @ManyToOne
     @JoinColumn(name = "instructorId")
     private Instructor instructor;
     @ManyToOne
     @JoinColumn(name = "userId")
     private UserL user;
-    private String content;
-
+    private Double instructorRating;
 }
