@@ -24,8 +24,8 @@ public class UserL {
     @Column(unique = true)
     private String email;
     private String password;
-    private String role;
+    private String role="user";
     private String address;
     private String phoneNo;
-    private Boolean isActive;
+    private Boolean isActive=true;
 }

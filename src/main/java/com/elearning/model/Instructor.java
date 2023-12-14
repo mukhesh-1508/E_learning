@@ -1,5 +1,6 @@
 package com.elearning.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,13 +17,19 @@ import java.util.List;
 
 public class Instructor {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @OneToOne
     @JoinColumn(name = "instructorId")
     private UserL user;
-    @OneToMany(mappedBy = "instructor", cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "instructorId")
     private List<Course> courses;
-    @OneToMany(mappedBy = "instructor", cascade = CascadeType.ALL)
-    private List<InstructorReview> instructorReviews;
+
+    @ElementCollection
+    @CollectionTable(name = "instructorTech", joinColumns = @JoinColumn(name = "id"))
+    @Column(name = "tech")
+    private List<String> tech;
+    private Boolean isInstructorActive = true;
+
+
 }

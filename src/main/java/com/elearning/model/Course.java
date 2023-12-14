@@ -19,12 +19,7 @@ public class Course {
     private Long courseId;
     private String courseName;
     private String description;
-    private Double rating;
-    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
-    private List<CourseReview> reviews;
-    @ManyToOne
-    @JoinColumn(name = "instructorId")
-    private Instructor instructor;
-    private Boolean courseActive;
+    private Double price;
+    private Boolean courseActive=true;
 
 }

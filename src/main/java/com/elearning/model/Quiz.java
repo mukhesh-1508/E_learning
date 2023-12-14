@@ -17,11 +17,7 @@ public class Quiz {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long quizId;
     @ManyToOne
-    @JoinColumn(name = "courseId")
-    private Course course;
+    @JoinColumn(name = "lessonId")
+    private Lesson lesson;
     private String quizTitle;
-    @OneToMany(mappedBy = "quiz", cascade = CascadeType.ALL)
-    private List<Question> questions;
-    private Date startDate;
-    private Date endDate;
 }

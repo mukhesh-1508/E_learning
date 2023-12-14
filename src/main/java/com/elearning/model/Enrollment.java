@@ -20,12 +20,12 @@ public class Enrollment {
     private Long enrollmentId;
     @ManyToOne
     @JoinColumn(name = "courseId")
-    private Course courseId;
+    private Course course;
     @ManyToOne
     @JoinColumn(name = "userId")
     private UserL user;
     @CreatedDate
     @Temporal(TemporalType.TIMESTAMP)
     private Timestamp enrolledAt;
-    private Boolean isEnrolled;
+    private Boolean isEnrolled=true;
 }
