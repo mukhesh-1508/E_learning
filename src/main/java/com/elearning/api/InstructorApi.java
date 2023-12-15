@@ -1,5 +1,6 @@
 package com.elearning.api;
 
+import com.elearning.dto.AddTech;
 import com.elearning.dto.ResponseDto;
 import com.elearning.model.InstructorRating;
 import com.elearning.model.InstructorReview;
@@ -15,5 +16,7 @@ public interface InstructorApi {
     ResponseDto addReview(@RequestBody InstructorReview instructorReview);
     @PostMapping("/addRating")
     ResponseDto addRating(@RequestBody InstructorRating instructorRating);
+    @PostMapping("/addTech")
+    ResponseDto addTech(@RequestBody AddTech addTech);
 
 }

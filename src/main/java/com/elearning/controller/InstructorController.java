@@ -1,6 +1,7 @@
 package com.elearning.controller;
 
 import com.elearning.api.InstructorApi;
+import com.elearning.dto.AddTech;
 import com.elearning.dto.ResponseDto;
 import com.elearning.model.InstructorRating;
 import com.elearning.model.InstructorReview;
@@ -30,5 +31,10 @@ public class InstructorController implements InstructorApi {
     @Override
     public ResponseDto addRating(InstructorRating instructorRating) {
         return service.addRating(instructorRating);
+    }
+
+    @Override
+    public ResponseDto addTech(AddTech addTech) {
+        return service.addTech(addTech);
     }
 }

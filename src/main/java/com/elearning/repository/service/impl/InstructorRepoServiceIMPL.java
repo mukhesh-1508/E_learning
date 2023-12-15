@@ -1,6 +1,8 @@
 package com.elearning.repository.service.impl;
 
+import com.elearning.dto.AddTech;
 import com.elearning.dto.ResponseDto;
+import com.elearning.model.Instructor;
 import com.elearning.model.InstructorRating;
 import com.elearning.model.InstructorReview;
 import com.elearning.repository.InstructorRatingRepo;
@@ -43,5 +45,13 @@ public class InstructorRepoServiceIMPL implements InstructorRepoService {
     @Override
     public ResponseDto getInstructorById(Long id) {
         return new ResponseDto(HttpStatus.OK,"instructor by id",instructorRepo.findById(id));
+    }
+
+    @Override
+    public ResponseDto addTech(AddTech addTech) {
+        Instructor instructor=instructorRepo.findById(addTech.getInstructorId()).get();
+        instructor.getTech().add(addTech.getTech());
+        instructorRepo.save(instructor);
+        return new ResponseDto(HttpStatus.OK,"tech added to instructor","");
     }
 }

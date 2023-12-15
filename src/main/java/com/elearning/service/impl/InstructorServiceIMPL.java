@@ -1,5 +1,6 @@
 package com.elearning.service.impl;
 
+import com.elearning.dto.AddTech;
 import com.elearning.dto.ResponseDto;
 import com.elearning.model.InstructorRating;
 import com.elearning.model.InstructorReview;
@@ -30,5 +31,10 @@ public class InstructorServiceIMPL implements InstructorService {
     @Override
     public ResponseDto getInstructorById(Long id) {
         return instructorRepoService.getInstructorById(id);
+    }
+
+    @Override
+    public ResponseDto addTech(AddTech addTech) {
+        return instructorRepoService.addTech(addTech);
     }
 }

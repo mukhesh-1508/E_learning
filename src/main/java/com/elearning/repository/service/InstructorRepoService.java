@@ -1,5 +1,6 @@
 package com.elearning.repository.service;
 
+import com.elearning.dto.AddTech;
 import com.elearning.dto.ResponseDto;
 import com.elearning.model.InstructorRating;
 import com.elearning.model.InstructorReview;
@@ -14,4 +15,6 @@ public interface InstructorRepoService {
     ResponseDto addRating(InstructorRating instructorRating);
 
     ResponseDto getInstructorById(Long id);
+
+    ResponseDto addTech(AddTech addTech);
 }
