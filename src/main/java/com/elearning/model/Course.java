@@ -20,6 +20,10 @@ public class Course {
     private String courseName;
     private String description;
     private Double price;
+    private String category;
+    @ManyToOne
+    @JoinColumn(name = "instructorId")
+    private Instructor instructor;
     private Boolean courseActive=true;
 
 }

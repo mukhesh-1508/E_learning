@@ -20,4 +20,13 @@ public interface CourseService {
     ResponseDto addRating(CourseRating courseRating);
 
 
+    ResponseDto getRating(Long courseId);
+
+    ResponseDto getAllRating();
+
+    ResponseDto getReview(Long courseId);
+
+    ResponseDto getAllReview();
+
+    ResponseDto getCourseByCategory(String category);
 }

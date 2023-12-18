@@ -41,9 +41,7 @@ public class UserRepoServiceIMPL implements UserRepoService {
         instructor.setUser(userL);
         instructor.setId(userId);
         instructorRepo.save(instructor);
-        for(Course course: instructor.getCourses()){
-            courseRepo.save(course);
-        }
+
 
         return new ResponseDto(HttpStatus.OK,"instructor added","");
     }

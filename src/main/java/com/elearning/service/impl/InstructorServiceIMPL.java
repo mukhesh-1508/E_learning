@@ -37,4 +37,24 @@ public class InstructorServiceIMPL implements InstructorService {
     public ResponseDto addTech(AddTech addTech) {
         return instructorRepoService.addTech(addTech);
     }
+
+    @Override
+    public ResponseDto getRating(Long instructorId) {
+        return instructorRepoService.getRating(instructorId);
+    }
+
+    @Override
+    public ResponseDto getAllReview() {
+        return instructorRepoService.getAllReview();
+    }
+
+    @Override
+    public ResponseDto getReview(Long instructorId) {
+        return instructorRepoService.getReview(instructorId);
+    }
+
+    @Override
+    public ResponseDto getAllRating() {
+        return instructorRepoService.getAllRating();
+    }
 }

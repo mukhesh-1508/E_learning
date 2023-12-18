@@ -18,5 +18,13 @@ public interface InstructorApi {
     ResponseDto addRating(@RequestBody InstructorRating instructorRating);
     @PostMapping("/addTech")
     ResponseDto addTech(@RequestBody AddTech addTech);
+    @GetMapping("/getRating/{instructorId}")
+    ResponseDto getRating(@PathVariable Long instructorId);
+    @GetMapping ("/getReview/{instructorId}")
+    ResponseDto getReview(@PathVariable Long instructorId);
+    @GetMapping("/getAllReview")
+    ResponseDto getAllReview();
+    @GetMapping("/getAllRating")
+    ResponseDto getAllRating();
 
 }

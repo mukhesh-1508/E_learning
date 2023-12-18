@@ -18,5 +18,15 @@ public interface CourseApi {
     ResponseDto addReview(@RequestBody CourseReview courseReview);
     @PostMapping("/addRating")
     ResponseDto addRating(@RequestBody CourseRating courseRating);
+    @GetMapping("/getRating/{courseId}")
+    ResponseDto getRating(@PathVariable Long courseId);
+    @GetMapping("/getAllRating")
+    ResponseDto getAllRating();
+    @GetMapping("/getReview/{courseId}")
+    ResponseDto getReview(@PathVariable Long courseId);
+    @GetMapping("/getAllReview")
+    ResponseDto getAllReview();
+    @GetMapping("getCourseByCategory/{category}")
+    ResponseDto getCourseByCategory(@PathVariable String category);
 
 }

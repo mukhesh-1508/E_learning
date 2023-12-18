@@ -17,4 +17,12 @@ public interface InstructorRepoService {
     ResponseDto getInstructorById(Long id);
 
     ResponseDto addTech(AddTech addTech);
+
+    ResponseDto getRating(Long instructorId);
+
+    ResponseDto getAllReview();
+
+    ResponseDto getReview(Long instructorId);
+
+    ResponseDto getAllRating();
 }

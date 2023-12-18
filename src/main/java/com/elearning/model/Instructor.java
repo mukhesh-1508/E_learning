@@ -21,9 +21,6 @@ public class Instructor {
     @OneToOne
     @JoinColumn(name = "instructorId")
     private UserL user;
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "instructorId")
-    private List<Course> courses;
 
     @ElementCollection
     @CollectionTable(name = "instructorTech", joinColumns = @JoinColumn(name = "id"))

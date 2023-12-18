@@ -37,4 +37,24 @@ public class InstructorController implements InstructorApi {
     public ResponseDto addTech(AddTech addTech) {
         return service.addTech(addTech);
     }
+
+    @Override
+    public ResponseDto getRating(Long instructorId) {
+        return service.getRating(instructorId);
+    }
+
+    @Override
+    public ResponseDto getReview(Long instructorId) {
+        return service.getReview(instructorId);
+    }
+
+    @Override
+    public ResponseDto getAllReview() {
+        return service.getAllReview();
+    }
+
+    @Override
+    public ResponseDto getAllRating() {
+        return service.getAllRating();
+    }
 }

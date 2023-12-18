@@ -41,5 +41,30 @@ public class CourseServiceIMPL implements CourseService {
         return courseRepoService.addRating(courseRating);
     }
 
+    @Override
+    public ResponseDto getRating(Long courseId) {
+        return courseRepoService.getRating(courseId);
+    }
+
+    @Override
+    public ResponseDto getAllRating() {
+        return courseRepoService.getAllRating();
+    }
+
+    @Override
+    public ResponseDto getReview(Long courseId) {
+        return courseRepoService.getReview(courseId);
+    }
+
+    @Override
+    public ResponseDto getAllReview() {
+        return courseRepoService.getAllReview();
+    }
+
+    @Override
+    public ResponseDto getCourseByCategory(String category) {
+        return courseRepoService.getCourseByCategory(category);
+    }
+
 
 }

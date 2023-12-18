@@ -39,5 +39,30 @@ public class CourseController implements CourseApi {
         return courseService.addRating(courseRating);
     }
 
+    @Override
+    public ResponseDto getRating(Long courseId) {
+        return courseService.getRating(courseId);
+    }
+
+    @Override
+    public ResponseDto getAllRating() {
+        return courseService.getAllRating();
+    }
+
+    @Override
+    public ResponseDto getReview(Long courseId) {
+        return courseService.getReview(courseId);
+    }
+
+    @Override
+    public ResponseDto getAllReview() {
+        return courseService.getAllReview();
+    }
+
+    @Override
+    public ResponseDto getCourseByCategory(String category) {
+        return courseService.getCourseByCategory(category);
+    }
+
 
 }
