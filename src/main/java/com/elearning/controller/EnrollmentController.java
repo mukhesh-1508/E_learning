@@ -20,4 +20,9 @@ public class EnrollmentController implements EnrollmentApi {
     public ResponseDto enrolledCourses(Long userId) {
         return enrollmentService.enrolledCourses(userId);
     }
+
+    @Override
+    public ResponseDto unEnroll(Long enrollmentId) {
+        return enrollmentService.unEnroll(enrollmentId);
+    }
 }

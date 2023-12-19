@@ -1,5 +1,6 @@
 package com.elearning.repository.service.impl;
 
+import com.elearning.api.EnrollmentApi;
 import com.elearning.dto.ResponseDto;
 import com.elearning.model.Course;
 import com.elearning.model.Enrollment;
@@ -35,8 +36,19 @@ public class EnrollmentRepoServiceIMPL implements EnrollmentRepoService {
         List<Enrollment> enrollmentList=enrollmentRepo.findAllByUser_UserId(userId);
         List<Course> courseList=new ArrayList<>();
         for(Enrollment enrollment:enrollmentList){
-            courseList.add(enrollment.getCourse());
+            if(enrollment.getIsEnrolled()) {
+                courseList.add(enrollment.getCourse());
+            }
         }
         return new ResponseDto(HttpStatus.OK,"user enrolled courses",courseList);
+    }
+
+    @Override
+    public ResponseDto unEnroll(Long enrollmentId) {
+        Enrollment enrollment=enrollmentRepo.findById(enrollmentId).get();
+        enrollment.setIsEnrolled(false);
+        enrollmentRepo.save(enrollment);
+
+        return new ResponseDto(HttpStatus.OK,"user unEnrolled course","");
     }
 }

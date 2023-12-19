@@ -9,4 +9,6 @@ public interface EnrollmentRepoService {
     ResponseDto toEnroll(Enrollment enrollment);
 
     ResponseDto enrolledCourses(Long userId);
+
+    ResponseDto unEnroll(Long enrollmentId);
 }

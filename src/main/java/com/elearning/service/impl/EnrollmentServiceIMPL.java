@@ -20,4 +20,9 @@ public class EnrollmentServiceIMPL implements EnrollmentService {
     public ResponseDto enrolledCourses(Long userId) {
         return enrollmentRepoService.enrolledCourses(userId);
     }
+
+    @Override
+    public ResponseDto unEnroll(Long enrollmentId) {
+        return enrollmentRepoService.unEnroll(enrollmentId);
+    }
 }

@@ -12,4 +12,6 @@ public interface EnrollmentApi {
     ResponseDto toEnroll(@RequestBody Enrollment enrollment);
     @GetMapping("/enrolledCourses/{userId}")
     ResponseDto enrolledCourses(@PathVariable Long userId);
+    @PostMapping("/unEnroll/{enrollmentId}")
+    ResponseDto unEnroll(@PathVariable Long enrollmentId);
 }
