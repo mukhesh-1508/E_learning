@@ -13,7 +13,7 @@ public class UserController implements UserApi {
     @Autowired
     private UserService service;
     @Override
-    public ResponseDto getAllUsers() {
+    public ResponseDto getAllUsers(){
         return service.getAllUsers();
     }
 

@@ -1,5 +1,6 @@
 package com.elearning.service.impl;
 
+import com.elearning.dto.IsEnrolled;
 import com.elearning.dto.ResponseDto;
 import com.elearning.model.Enrollment;
 import com.elearning.repository.service.EnrollmentRepoService;
@@ -24,5 +25,10 @@ public class EnrollmentServiceIMPL implements EnrollmentService {
     @Override
     public ResponseDto unEnroll(Long enrollmentId) {
         return enrollmentRepoService.unEnroll(enrollmentId);
+    }
+
+    @Override
+    public ResponseDto isEnrolled(IsEnrolled isEnrolled) {
+        return enrollmentRepoService.isEnrolled(isEnrolled);
     }
 }

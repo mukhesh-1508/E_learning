@@ -1,6 +1,7 @@
 package com.elearning.repository.service.impl;
 
 import com.elearning.api.EnrollmentApi;
+import com.elearning.dto.IsEnrolled;
 import com.elearning.dto.ResponseDto;
 import com.elearning.model.Course;
 import com.elearning.model.Enrollment;
@@ -50,5 +51,10 @@ public class EnrollmentRepoServiceIMPL implements EnrollmentRepoService {
         enrollmentRepo.save(enrollment);
 
         return new ResponseDto(HttpStatus.OK,"user unEnrolled course","");
+    }
+
+    @Override
+    public ResponseDto isEnrolled(IsEnrolled isEnrolled) {
+        return new ResponseDto(HttpStatus.OK, "user Enrolled this course",        enrollmentRepo.findAllByUser_UserIdAndCourse_CourseId(isEnrolled.getUserId(),isEnrolled.getCourseId()));
     }
 }

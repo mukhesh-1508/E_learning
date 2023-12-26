@@ -1,6 +1,7 @@
 package com.elearning.controller;
 
 import com.elearning.api.EnrollmentApi;
+import com.elearning.dto.IsEnrolled;
 import com.elearning.dto.ResponseDto;
 import com.elearning.model.Enrollment;
 import com.elearning.service.EnrollmentService;
@@ -24,5 +25,10 @@ public class EnrollmentController implements EnrollmentApi {
     @Override
     public ResponseDto unEnroll(Long enrollmentId) {
         return enrollmentService.unEnroll(enrollmentId);
+    }
+
+    @Override
+    public ResponseDto isEnrolled(IsEnrolled isEnrolled) {
+        return enrollmentService.isEnrolled(isEnrolled);
     }
 }
